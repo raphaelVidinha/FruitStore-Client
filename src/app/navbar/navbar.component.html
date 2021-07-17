@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
     </div>
-    <span class="navbar-text">
+    <span class="navbar-text" *ngIf="isLoged() && returnRole() != 'admin'">
       <a href="#">
         <i class="fas fa-shopping-cart fa-lg text-white"></i>
       </a>

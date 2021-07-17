@@ -6,5 +6,6 @@
   </div>
 </div>
 <div class="container mt-3">
-  <app-shop-window *ngIf="isLoged"></app-shop-window>
+  <app-shop-window *ngIf="isLoged() && role == 'user'"></app-shop-window>
+  <app-login-form *ngIf="!isLoged()"></app-login-form>
 </div>

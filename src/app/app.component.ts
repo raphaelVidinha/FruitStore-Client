@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 
@@ -9,9 +10,16 @@ import { Component } from '@angular/core';
 export class AppComponent implements OnInit {
 
   public title: string = 'FruitStore';
-  public isLoged: boolean = false;
+  public role: any = "";
+
+  constructor(private auth: AuthService){}
 
   ngOnInit() {
+    this.role = this.auth.verifyRole();
+  }
+
+  isLoged(){
+    return this.auth.logedIn();
   }
 
 }
