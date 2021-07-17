@@ -1,3 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
 @import url('../node_modules/@fortawesome/fontawesome-free/css/all.min.css');
+
+:root{
+  --grey-light:#232525;
+  --text-light-green: rgb(114, 236, 77);
+}
+
+.bg-grey{
+  background-color: var(--grey-light);
+}
+
+.text-light-green {
+  color: var(--text-light-green);
+}
