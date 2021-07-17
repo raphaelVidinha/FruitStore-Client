@@ -7,5 +7,6 @@
 </div>
 <div class="container mt-3">
   <app-shop-window *ngIf="isLoged() && role == 'user'"></app-shop-window>
+  <app-add-fruit *ngIf="isLoged() && role == 'admin'"></app-add-fruit>
   <app-login-form *ngIf="!isLoged()"></app-login-form>
 </div>

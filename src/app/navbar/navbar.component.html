@@ -9,9 +9,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
     </div>
-    <span class="navbar-text" *ngIf="isLoged() && returnRole() != 'admin'">
-      <a href="#">
+    <span class="navbar-text" *ngIf="isLoged()">
+      <a href="javascript:void(0);" *ngIf="returnRole() != 'admin'" class="btn">
         <i class="fas fa-shopping-cart fa-lg text-white"></i>
+      </a>
+      |
+      <a href="javascript:void(0);" (click)="logout()" class="btn">
+        <i class="fas fa-power-off fa-lg"></i>
       </a>
     </span>
   </div>

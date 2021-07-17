@@ -22,4 +22,8 @@ export class NavbarComponent implements OnInit {
     return this.auth.verifyRole();
   }
 
+  logout(){
+    this.auth.logout();
+  }
+
 }

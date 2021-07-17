@@ -27,6 +27,12 @@ export class AuthService {
     )
   }
 
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
+    window.location.reload();
+  }
+
   verifyRole(){
     return localStorage.getItem('role') ?? undefined;
   }

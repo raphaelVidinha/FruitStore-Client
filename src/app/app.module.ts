@@ -8,13 +8,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ShopWindowComponent } from './shop-window/shop-window.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { FormsModule } from '@angular/forms';
+import { AddFruitComponent } from './add-fruit/add-fruit.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
       NavbarComponent,
       ShopWindowComponent,
-      LoginFormComponent
+      LoginFormComponent,
+      AddFruitComponent
    ],
   imports: [
     BrowserModule,

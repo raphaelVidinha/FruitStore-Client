@@ -19,7 +19,7 @@ export class LoginFormComponent implements OnInit {
   logar(){
     this.authService.login(this.model).subscribe(
       () => {
-
+        window.location.reload();
       },
       error => {
 
