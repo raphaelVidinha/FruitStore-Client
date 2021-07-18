@@ -18,6 +18,6 @@ Ao acessar a aplicação seguindo as instruções acima, certifique-se de ter in
 
 > Note: lembrando que o banco de dados é o inMemory, ou seja, sempre que parar o backend, os dados serão perdidos.
 
-- Faça login com um usuário válido, existem 2 possíveis 'admin' | 'admin' e 'user' | '123456';
+- Faça login com um usuário válido, existem 2 possíveis user: admin senha: admin e user: user senha: 123456;
 - O usuário admin é o único que consegue fazer as operações de CRUD das frutas.
 - O usuário user consegue ver a vitrine de frutas, selecionar a quantidade, adicionar no carrinho de copras e finalizar a compra no carrinho.
