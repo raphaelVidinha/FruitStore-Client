@@ -2,26 +2,22 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
-## Development server
+### instruções:
+Após clonar o projeto, com o terminal vá até a raiz do projeto e rode os comandos abaixo para instalar as dependências e rodar o projeto respectivamente;
+De preferência um de cada vez;
+```
+npm install
+ng serve
+``` 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Acesso a aplicação:
+O host da aplicação, por default é: https://localhost:4200/
 
-## Code scaffolding
+### Instruções de uso da aplicação:
+Ao acessar a aplicação seguindo as instruções acima, certifique-se de ter iniciado o projeto de backend, API, e após isso siga as instruções abaixo:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+> Note: lembrando que o banco de dados é o inMemory, ou seja, sempre que parar o backend, os dados serão perdidos.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Faça login com um usuário válido, existem 2 possíveis 'admin' | 'admin' e 'user' | '123456';
+- O usuário admin é o único que consegue fazer as operações de CRUD das frutas.
+- O usuário user consegue ver a vitrine de frutas, selecionar a quantidade, adicionar no carrinho de copras e finalizar a compra no carrinho.
