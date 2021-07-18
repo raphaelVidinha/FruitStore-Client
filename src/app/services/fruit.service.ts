@@ -11,6 +11,7 @@ import { Fruit } from '../models/Fruit';
 export class FruitService {
 
   baseUrl = 'https://localhost:5001/v1/fruits/';
+  baseUrlCart = 'https://localhost:5001/v1/cart/';
 
   constructor(private http: HttpClient) { }
 
@@ -18,7 +19,6 @@ export class FruitService {
     const token = this.getToken();
     return this.http.get(`${this.baseUrl}`, { headers: token }).pipe(
       map((response: any) => {
-        console.log(response)
         return response;
       })
     )
@@ -36,6 +36,15 @@ export class FruitService {
   saveFruit(model: Fruit){
     const token = this.getToken();
     return this.http.post(this.baseUrl, model, { headers: token }).pipe(
+      map((response) => {
+        return response;
+      })
+    )
+  }
+
+  closeOrder(model: any) {
+    const token = this.getToken();
+    return this.http.post(`${this.baseUrlCart}add`, model, { headers: token }).pipe(
       map((response) => {
         return response;
       })

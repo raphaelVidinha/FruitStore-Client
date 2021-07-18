@@ -8,14 +8,22 @@
           <div class="card-body">
             <h5 class="card-title">{{ fruit.name }}</h5>
             <p class="card-text">{{ fruit.description }}</p>
-            <p>{{ fruit.stockQuantity }} un. - R$ {{ fruit.price }}</p>
+            <div class="row">
+              <div class="col-6">
+                {{ fruit.stockQuantity }} un.
+              </div>
+              <div class="col-6">
+                R$ {{ fruit.price }}
+              </div>
+            </div>
+            <hr>
             <div class="form-group">
               <div class="row">
                 <div class="col-md-4">
-                  <input type="number" class="form-control" min="1" max="5" value="1">
+                  <input type="number" id="input_{{fruit.id}}" class="form-control" min="1" max="5" value="1">
                 </div>
                 <div class="col-md-8">
-                  <a href="#" class="btn btn-primary form-control">Adicionar</a>
+                  <button class="btn btn-primary form-control" (click)="addToCart(fruit.id, fruit.name, fruit.price)">Adicionar</button>
                 </div>
               </div>
             </div>

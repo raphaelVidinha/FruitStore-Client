@@ -10,8 +10,8 @@
 
     </div>
     <span class="navbar-text" *ngIf="isLoged()">
-      <a href="javascript:void(0);" *ngIf="returnRole() != 'admin'" class="btn">
-        <i class="fas fa-shopping-cart fa-lg text-white"></i>
+      <a href="javascript:void(0);" *ngIf="returnRole() != 'admin'" class="btn" (click)="openModal(template)">
+        <i class="fas fa-shopping-cart fa-lg text-white"></i> <span class="badge bg-info text-white rounded-circle" *ngIf="items.length > 0">{{ items.length }}</span>
       </a>
       |
       <a href="javascript:void(0);" (click)="logout()" class="btn">
@@ -20,3 +20,39 @@
     </span>
   </div>
 </nav>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h5 class="modal-title pull-left">Carrinho de Compra</h5>
+    <button type="button" class="btn btn-default pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <table class="table table-bordered table-hover table-sm">
+      <thead>
+        <tr>
+          <th>Fruta</th>
+          <th>Qtd</th>
+          <th>Valor</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.name }}</td>
+          <td>{{ order.qtd }}</td>
+          <td>R$ {{ order.price }}</td>
+          <td>R$ {{ order.total }}</td>
+        </tr>
+        <tr>
+          <td colspan="3"><b>Total</b></td>
+          <td><b>R$ {{ totalOrder }}</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="closeOrder()">Finalizar compra</button>
+  </div>
+</ng-template>

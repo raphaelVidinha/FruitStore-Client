@@ -9,9 +9,10 @@ import { ShopWindowComponent } from './shop-window/shop-window.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { FormsModule } from '@angular/forms';
 import { AddFruitComponent } from './add-fruit/add-fruit.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
       NavbarComponent,
       ShopWindowComponent,
@@ -22,7 +23,8 @@ import { AddFruitComponent } from './add-fruit/add-fruit.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
