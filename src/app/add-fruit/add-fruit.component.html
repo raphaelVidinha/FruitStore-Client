@@ -1,5 +1,92 @@
 <div class="row">
   <div class="col-12">
-    <h3>Frutas</h3>
+    <div class="row">
+      <div class="col-12 mb-2">
+        <div class="card">
+          <div class="card-header text-white bg-grey py-1 text-center">
+            <h4>Frutas</h4>
+          </div>
+          <div class="card-body">
+            <div *ngIf="isSave || isEdit">
+              <input type="hidden" [(ngModel)]="model.id" value="{{ model.id }}" *ngIf="isEdit">
+              <div class="row">
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="">Nome</label>
+                    <input type="text" [(ngModel)]="model.name" value="{{ model.name }}" class="form-control">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="">Descrição</label>
+                    <input type="text" [(ngModel)]="model.description" value="{{ model.description }}" class="form-control">
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="form-group">
+                    <label for="">Imagem</label> <br>
+                    <button class="btn btn-primary form-control" (click)="file.click()"> <i class="fas fa-upload"></i> Foto</button>
+                    <input type="file" #file (change)="onFileChanges($event)" class="form-control" style="display: none;">
+                  </div>
+                </div>
+                <div class="col-1">
+                  <div class="form-group">
+                    <label for="">Estoque</label>
+                    <input type="text" [(ngModel)]="model.stockQuantity" value="{{ model.stockQuantity }}" class="form-control">
+                  </div>
+                </div>
+                <div class="col-1">
+                  <div class="form-group">
+                    <label for="">Valor</label>
+                    <input type="text" [(ngModel)]="model.price" value="{{ model.price }}" class="form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="isList">
+              <div class="row">
+                <div class="col-12">
+                  <button type="button" (click)="create()" class="btn btn-sm btn-success float-end">
+                    <i class="fas fa-plus"></i> Novo
+                  </button>
+                </div>
+              </div>
+              <hr>
+              <table class="table table-bordered table-striped table-hover table-sm">
+                <thead>
+                  <tr class="table-dark">
+                    <th>Foto</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let fruit of fruits">
+                    <td><img src="https://localhost:5001/resources/images/{{ fruit.image }}" alt="" style="max-width: 80px; height: auto;"></td>
+                    <td>{{ fruit.name }}</td>
+                    <td>{{ fruit.price }}</td>
+                    <td>{{ fruit.stockQuantity }}</td>
+                    <td style="max-width: 40px;" class="text-center">
+                      <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" (click)="getById(fruit.id)" class="btn btn-sm btn-info text-white">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button type="button" (click)="delete(fruit.id)" class="btn btn-sm btn-danger">
+                          <i class="fas fa-trash"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="javascript:void()" (click)="save()" class="btn btn-primary float-end" *ngIf="isSave || isEdit"> <i class="fas fa-save"></i> Salvar</a>
+          </div>
+        </div>
+      </div>
   </div>
 </div>

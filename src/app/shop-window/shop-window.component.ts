@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FruitService } from '../services/fruit.service';
 
 @Component({
   selector: 'app-shop-window',
@@ -10,16 +10,18 @@ export class ShopWindowComponent implements OnInit {
 
   public fruits: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private service: FruitService) { }
 
   ngOnInit() {
     this.getFruits();
   }
 
   getFruits(){
-    this.http.get('https://localhost:5001/v1/fruits').subscribe(response => {
-      this.fruits = response;
-    })
+    this.service.getFruits().subscribe(
+      (response) => {
+        this.fruits = response;
+      }
+    )
   }
 
 }
